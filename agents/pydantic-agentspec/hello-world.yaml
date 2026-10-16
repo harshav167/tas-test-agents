@@ -1,0 +1,16 @@
+# Sample agent — Pydantic AI `AgentSpec` (YAML).
+# This is the canonical, primary format for Tembo Agent Studio agents.
+# See ../context/0.1/AGENT_FORMAT.md for the format decision.
+#
+# TAS runs this file by handing it to the bundled pydantic-ai wrapper
+# (api/scripts/run_pydantic.py); the wrapper constructs an Agent from
+# the fields below. pydantic-ai 1.5 has no Agent.from_file factory —
+# the TAS wrapper does the mapping.
+name: hello-world
+model: anthropic:claude-sonnet-5
+description: Sample agent — friendly greeter used to verify a workspace runs.
+instructions: |
+  You are a friendly agent.
+  Greet the user warmly and answer briefly.
+model_settings:
+  max_tokens: 512
